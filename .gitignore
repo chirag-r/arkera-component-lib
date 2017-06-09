@@ -13,3 +13,4 @@ node_modules/.staging/gulp-sass-2bf66d81/.eslintrc
 node_modules/.staging/qs-cf66f75d/.jscs.json
 node_modules/
 npm-debug.log
+dist/

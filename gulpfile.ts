@@ -22,7 +22,7 @@ gulp.task('build', function (done) {
 //----
 //clearing the output dir
 gulp.task('clean', function (done) {
-  exec('rm -rf lib', function (err, stdOut, stdErr) {
+  exec('rm -rf dist', function (err, stdOut, stdErr) {
     if (err){
       done(err);
     } else {
@@ -38,7 +38,7 @@ gulp.task('compile-typings', function() {
     //loading typings file
     var tsProject = tsc.createProject('src/tsconfig.json');
 
-    return  tsProject.src('src/**/*.ts')
+    return  tsProject.src('*.ts')
         .pipe(embedTemplates({ 
             base:'/src',
             useRelativePaths: true 
@@ -46,7 +46,7 @@ gulp.task('compile-typings', function() {
         .pipe(tsProject())
         .pipe(sourcemaps.init())
         .pipe(sourcemaps.write('./'))
-        .pipe(gulp.dest('lib'));
+        .pipe(gulp.dest('dist'));
 });
 
 //----
