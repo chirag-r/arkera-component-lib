@@ -1,7 +1,6 @@
 {
-  "name": "@ak/arkera-component-lib",
-  "version": "0.0.0",
-  "license": "MIT",
+  "name": "arkera-component-lib",
+  "version": "1.0.1",
   "main": "index.js",
   "types": "index.d.ts",
   "scripts": {

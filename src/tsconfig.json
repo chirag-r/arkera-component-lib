@@ -9,15 +9,7 @@
     "removeComments": true,
     "sourceMap": true,
     "outDir": "../lib/",
-    "lib": ["dom", "es6"],
-    "stripInternal": true,
-    "typeRoots": [
-      "./node_modules/@types",
-      "./node_modules"
-    ],
-    "types": [
-      "node"
-    ]
+    "lib": ["dom", "es6"]
   },
   "exclude": [
     "node_modules"
