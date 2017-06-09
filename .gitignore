@@ -8,3 +8,7 @@
 .idea/arkera-component-lib.iml
 .idea/libraries/arkera_component_lib_node_modules.xml
 .idea/.name
+node_modules/.staging/@angular/common-4afe9ba4/README.md
+node_modules/.staging/gulp-sass-2bf66d81/.eslintrc
+node_modules/.staging/qs-cf66f75d/.jscs.json
+node_modules/
