@@ -1,13 +1,14 @@
 import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
-import {FeedComponent} from './components/feed/feed.component';
+import {FeedComponent} from './arkera/components/feed/feed.component';
+import {FeedListComponent} from './arkera/components/feed-list/feed-list.component';
 
 @NgModule({
   imports: [
     CommonModule
   ],
-  declarations: [FeedComponent],
-  exports: [FeedComponent]
+  declarations: [FeedComponent,FeedListComponent],
+  exports: [FeedComponent,FeedListComponent]
 })
-export class FeedModule {
+export class ArkeraLibModule {
 }

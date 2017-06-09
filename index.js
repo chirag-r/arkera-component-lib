@@ -1,1 +1,1 @@
-exports.MyLibrary = require('./lib/arkera.lib.module').ArkeracomponentLibModule;
+exports.ArkeracomponentLibModule = require('./lib/arkera.lib.module').ArkeracomponentLibModule;
