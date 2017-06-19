@@ -1,14 +1,8 @@
-<a>
-  <hr>
-  <div>1 min read</div>
-  <br>
-  <div>
-    Chinese economy to grow 6.7% in 2017,as consumption still expands: J.p.Morgan
+<span *ngIf="articles">
+  <div *ngFor="let data of articles">
+    <ak-feed [component_config]="data"></ak-feed>
   </div>
-  <br>
-  <img src="https://images.mapsofworld.com/around-the-world/Chinese-economy-faces-tough-times.jpg"/>
-  <br>
-  <div>
-    <b> YOU'VE SHOWN INTEREST IN J.P.MORGAN </b>
-  </div>
-</a>
+</span>
+<div style="font-size: larger;font-weight: 300;margin-top: 10px;margin-bottom: 10px;background:red;text-align:center" [hidden]="showLoading">
+  <b> Loading...</b>
+</div>
