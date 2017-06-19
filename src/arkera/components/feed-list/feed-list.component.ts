@@ -29,27 +29,29 @@ export class FeedListComponent implements OnInit {
 
   getArticle(isAppend:boolean) {
     this._feedService.getArticle(this.offset).subscribe((items:any) => {
-      if(isAppend){
+      if (isAppend) {
         this.articles = this.articles.concat(items.articles);
       } else {
         this.articles = items.articles;
       }
       setTimeout(() => {
         this.showLoading = true;
-      },500);
+      }, 600);
     });
   }
 
   @HostListener("window:scroll", ["$event"])
   @HostListener('window:scroll')
   onScroll():void {
-    if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
-      this.showLoading = false;
-      this.offset = this.offset + 1;
-      alert('you are at end of the page !!');
-      this.getArticle(true);
+    if (this.showLoading) {
+      if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
+        this.showLoading = false;
+        this.offset = this.offset + 1;
+        console.log('end of the page hit...calling api');
+        window.scrollTo(0,document.body.scrollHeight);
+        this.getArticle(true);
 
+      }
     }
   }
-
 }
