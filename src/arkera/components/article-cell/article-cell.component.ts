@@ -15,7 +15,6 @@ export class ArticleCellComponent implements OnInit {
 
   ngOnInit() {
     this.data = this.component_config;
-    console.log('data ' + JSON.stringify( this.data));
    }
 
   getTime(){

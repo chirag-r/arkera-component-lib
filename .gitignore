@@ -16,3 +16,4 @@ npm-debug.log
 dist/
 src/arkera/components/article-read-time/article-read-time.component.css
 src/arkera/components/article-cell/article-cell.component.css
+src/arkera/components/spinner/spinner.component.css

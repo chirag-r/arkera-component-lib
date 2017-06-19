@@ -4,24 +4,25 @@ import {AuthenticationService} from '../../services/authentication.service';
 import { Inject } from '@angular/core';
 import { OnInit } from '@angular/core';
 import {FeedService} from '../../services/Feed.service';
+import {SpinnerService} from '../../services/spinner.service';
 
 @Component({
   selector: 'ak-feed',
   templateUrl: 'feed.component.html',
-  styleUrls: ['feed.component.css'],
-  providers: [AuthenticationService, FeedService]
+  providers: [AuthenticationService, FeedService, SpinnerService]
 })
 export class FeedComponent implements OnInit {
   articles:any = null;
   offset:number = 0;
-  showLoading:boolean = false;
 
   constructor(@Inject(AuthenticationService) public _authenticationService:AuthenticationService,
-              @Inject(FeedService) public _feedService:FeedService) {
+              @Inject(FeedService) public _feedService:FeedService,
+              @Inject(SpinnerService) private _spinnerService:SpinnerService) {
 
   }
 
   ngOnInit() {
+    this._spinnerService.start();
     this._authenticationService.login().subscribe((res:any) => {
       this.getArticle(false);
     });
@@ -35,7 +36,7 @@ export class FeedComponent implements OnInit {
         this.articles = items.articles;
       }
       setTimeout(() => {
-        this.showLoading = true;
+        this._spinnerService.stop()
       }, 600);
     });
   }
@@ -43,14 +44,14 @@ export class FeedComponent implements OnInit {
   @HostListener("window:scroll", ["$event"])
   @HostListener('window:scroll')
   onScroll():void {
-    if (this.showLoading) {
+    if (!this._spinnerService.active) {
       if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
-        this.showLoading = false;
+        this._spinnerService.start();
         this.offset = this.offset + 1;
-        console.log('end of the page hit...calling api');
+        setTimeout(() => {
         window.scrollTo(0,document.body.scrollHeight);
+        }, 100);
         this.getArticle(true);
-
       }
     }
   }
