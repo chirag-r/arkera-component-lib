@@ -6,8 +6,8 @@ import {FeedComponent} from './arkera/components/feed/feed.component';
   imports: [
     CommonModule
   ],
-  declarations: [FeedComponent],
-  exports: [FeedComponent]
+  declarations: [FeedComponent,FeedComponent],
+  exports: [FeedComponent,FeedComponent]
 })
 export class ArkeraLibModule {
 }
