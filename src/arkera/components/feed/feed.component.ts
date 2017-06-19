@@ -7,7 +7,7 @@ import {FeedService} from '../../services/Feed.service';
 
 @Component({
   selector: 'ak-feed',
-  templateUrl: './feed.component.html',
+  templateUrl: 'feed.component.html',
   styleUrls: ['feed.component.css'],
   providers: [AuthenticationService, FeedService]
 })

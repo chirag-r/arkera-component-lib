@@ -14,3 +14,5 @@ node_modules/.staging/qs-cf66f75d/.jscs.json
 node_modules/
 npm-debug.log
 dist/
+src/arkera/components/article-read-time/article-read-time.component.css
+src/arkera/components/article-cell/article-cell.component.css

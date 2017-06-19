@@ -1,6 +1,6 @@
 <span *ngIf="articles">
   <div *ngFor="let data of articles">
-    <ak-feed [component_config]="data"></ak-feed>
+    <ak-article-cell [component_config]="data"></ak-article-cell>
   </div>
 </span>
 <div style="font-size: larger;font-weight: 300;margin-top: 10px;margin-bottom: 10px;background:red;text-align:center" [hidden]="showLoading">

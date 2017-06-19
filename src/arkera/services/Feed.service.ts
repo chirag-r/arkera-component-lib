@@ -16,7 +16,7 @@ export class FeedService {
   getArticle(offset:number):Observable<any> {
     var endpoint:string = addUpdateUrlParameter(this.ARTICLE_API, 'limit', 5);
     endpoint = addUpdateUrlParameter(endpoint, 'offset', offset);
-    endpoint = addUpdateUrlParameter(endpoint, 'readSession', '241497599329169');
+    //endpoint = addUpdateUrlParameter(endpoint, 'readSession', '241497599329169');
    // endpoint = addUpdateUrlParameter(endpoint, 'generateReadSession', true);
     let headers = new Headers({'Authorization': 'Bearer ' + this._authenticationService.token});
     return this.http.get(endpoint, {headers: headers})

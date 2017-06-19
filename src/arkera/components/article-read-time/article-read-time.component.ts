@@ -3,7 +3,6 @@ import { Input } from '@angular/core';
 import { OnInit } from '@angular/core';
 
 @Component({
-  moduleId: module.id,
   selector: 'article-read-time',
   templateUrl: 'article-read-time.component.html',
   styleUrls: ['article-read-time.component.css']
