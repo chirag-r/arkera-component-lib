@@ -6,11 +6,11 @@
         <p> {{data.title}} </p>
       </div>
     </div>
-    <div class="article-image">
-      <img src="{{data.url}}"/>
+    <div>
+      <img class="article-image" src="{{data.image_url}}"/>
     </div>
     <div class="article-reason">
-      <b> {{data.reason}}</b> WAS MENTIONED IN YOUR READING
+      <b> {{data.reason[0].entityName }}</b> WAS MENTIONED IN YOUR READING
     </div>
   </div>
 </a>
